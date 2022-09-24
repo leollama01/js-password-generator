@@ -3,54 +3,72 @@ document.addEventListener("DOMContentLoaded", function() {
     let buttonGenerate = $('#button-generate-password');
     let lengthPassword = $('#length-password');
     let valueLengthPassword = 0;
-    let listCheckbox = [];
     let charactersToUse = [];
+    let passwordGenerated = '';
+
 
     buttonGenerate.click(function() {
-        listCheckbox = [];
+        passwordGenerated = '';
+        charactersToUse = '';
         valueLengthPassword = 0;
-        charactersToUse = [];
         if ((lengthPassword.val() != '') && (!(Number.isNaN(parseInt(lengthPassword.val()))))) {
             if (parseInt(lengthPassword.val()) > 0) {
                 valueLengthPassword = parseInt(lengthPassword.val());
                 for (let i = 0; i < $('.opt-checkbox').length; i++) {
                     if ($($('.opt-checkbox')[i]).prop('checked')) {
-                        // listCheckbox.push($($('.opt-checkbox')[i]));
-                        // listCheckbox.push($('.opt-checkbox')[i].value);
                         charactersToUse += generateStringWithCharacter($('.opt-checkbox')[i].value);
+                        console.log(charactersToUse)
                     }
                 }
 
                 if (charactersToUse.length > 0) {
-                    console.log(charactersToUse)
+                    passwordGenerated = generateRandomPassword(valueLengthPassword, charactersToUse)
+                    console.log(passwordGenerated)
                 } else {
                     console.log('selecione checkbox')
+                    passwordGenerated = 'erro'
                 }
 
+            } else {
+                passwordGenerated = 'Wrong values, try again! -------'
             }
         } else {
             console.log('valor errado');
+            passwordGenerated = 'Wrong values, try again!'
+            $('#img-copy')[0].style.display = 'none'
         }
 
-        console.log(generateStringWithCharacter('uppercase'))
-        console.log(generateStringWithCharacter('lowercase'))
-        console.log(generateStringWithCharacter('digit'))
-        console.log(generateStringWithCharacter('special'))
+        // console.log(generateStringWithCharacter('uppercase'))
+        // console.log(generateStringWithCharacter('lowercase'))
+        // console.log(generateStringWithCharacter('digit'))
+        // console.log(generateStringWithCharacter('special'))
+
+        console.log($('#password-generated'))
+        $('#div-password-generated')[0].style.display = 'inline'
+        // $('#img-copy')[0].style.display = 'inline'
+        $('#password-generated')[0].textContent = passwordGenerated
 
     });
+
+    $('#img-copy').click(function() {
+        console.log('copiar')
+    })
 
 });
 
 
-function makeid(length) {
+// Function to generate random pass by: https://stackoverflow.com/a/1349426
+// But i've changed to my need
+function generateRandomPassword(_length, _charactersToUse) {
 
-    var result           = '';
-    var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-    var charactersLength = characters.length;
-    for ( var i = 0; i < length; i++ ) {
-      result += characters.charAt(Math.floor(Math.random() * charactersLength));
-   }
-   return result;
+    let result = '';
+    let characters = _charactersToUse
+    let charactersLength = _charactersToUse.length;
+    for ( var i = 0; i < _length; i++ ) {
+        result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+
+    return result;
 }
 
 
@@ -82,4 +100,9 @@ function generateStringWithCharacter(_typeOfCharacter) {
     }
 
     return strCharacter;
+}
+
+function adjustDisplayPassword(_passwordField, _copyField) {
+    $('#div-password-generated')[0].style.display = _passwordField
+    $('#img-copy')[0].style.display = _copyField
 }

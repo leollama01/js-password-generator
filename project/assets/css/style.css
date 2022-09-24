@@ -136,16 +136,25 @@ body {
     font-style: normal;
 }
 
-#password-generated {
+.password-generated-style {
     padding: 1.0rem;
     background-color: var(--secondaryColor);
     border-radius: 1.0rem;
+    box-shadow: 0.2rem 0.2rem 0.4rem var(--tertiaryColor);
+    max-width: 90%;
+    word-wrap: break-word;
     display: none;
 }
 
 .style-checkbox:checked {
     background-color: var(--secondaryColor);
     border-color: var(--secondaryColor);
+}
+
+.size-img-copy {
+    width: 24px;
+    margin-left: 6px;
+    cursor: pointer;
 }
 
 
