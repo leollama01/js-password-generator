@@ -1,9 +1,9 @@
-document.addEventListener("DOMContentLoaded", function() { 
+document.addEventListener("DOMContentLoaded", function() {
     
     let buttonGenerate = $('#button-generate-password');
     let lengthPassword = $('#length-password');
     let valueLengthPassword = 0;
-    let charactersToUse = [];
+    let charactersToUse = '';
     let passwordGenerated = '';
 
 
@@ -36,6 +36,7 @@ document.addEventListener("DOMContentLoaded", function() {
             console.log('valor errado');
             passwordGenerated = 'Wrong values, try again!'
             $('#img-copy')[0].style.display = 'none'
+            adjustDisplayPassword('inline', 'none')
         }
 
         // console.log(generateStringWithCharacter('uppercase'))
@@ -52,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     $('#img-copy').click(function() {
         console.log('copiar')
-    })
+    });
 
 });
 
