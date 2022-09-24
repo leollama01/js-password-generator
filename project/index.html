@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+
+    <main class="d-flex flex-column align-items-center">
+        <div class="mt-4">
+            <h1 class="header-one text-center">Password Generator</h1>
+            <label for="length-password" class="mt-4 mb-3 formatting-font-18 d-flex justify-content-between">
+                Length of generated password:
+                <input type="number" id="length-password" class="w-25 formatting-font-18">
+            </label>
+
+            <div class="p-2">
+                <div class="form-check form-check-inline formatting-font-18">
+                    <input class="form-check-input opt-checkbox style-checkbox" type="checkbox" id="check-uppercase"
+                        value="uppercase" title="A, B, ... Z">
+                    <label class="form-check-label" for="check-uppercase">Uppercase</label>
+                </div>
+                <div class="form-check form-check-inline formatting-font-18" title="a, b, ... z">
+                    <input class="form-check-input opt-checkbox style-checkbox" type="checkbox" id="check-lowercase"
+                        value="lowercase">
+                    <label class="form-check-label" for="check-lowercase">Lowercase</label>
+                </div>
+                <div class="form-check form-check-inline formatting-font-18" title="0, 1, 2, ... 9">
+                    <input class="form-check-input opt-checkbox style-checkbox" type="checkbox" id="check-digits"
+                        value="digit">
+                    <label class="form-check-label" for="check-digits">Digits</label>
+                </div>
+                <div class="form-check form-check-inline formatting-font-18" title="!@#$%&*">
+                    <input class="form-check-input opt-checkbox style-checkbox" type="checkbox" id="check-special"
+                        value="special">
+                    <label class="form-check-label" for="check-special">Special</label>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-center mt-5">
+                <button id="button-generate-password" class="button-generate"
+                    title="GENERATE A PASSWORD">Generate</button>
+            </div>
+        </div>
+
+
+        <div class="mt-5">
+            <span id="password-generated" class="formatting-font-18">espaaaaaaaaaaço para senha</span>
+        </div>
+    </main>
+
+
+    <script src="./assets/js/jquery-3.6.0.min.js"></script>
+    <script src="./assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="./assets/js/general.js"></script>
+</body>
+
+</html>

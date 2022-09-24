@@ -1,0 +1,201 @@
+/* Variables */
+:root {
+    /* --bg-color: linear-gradient(135deg, rgba(61, 8, 123, 0.3) , rgba(244, 59, 134, 0.3));
+    --lightVar: rgb(240, 240, 240);
+    --darkVar: #11052C;
+    --darkVarRGB: 17, 5, 44; */
+    --primaryColor: #2C3333;
+    --secondaryColor: #395B64;
+    --tertiaryColor: #A5C9CA;
+    --fontColor: #E7F6F2;
+
+    /* palette from: https://colorhunt.co/palette/2c3333395b64a5c9cae7f6f2 */
+}
+
+
+/* Google Fonts */
+/* montserrat-regular - latin */
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/montserrat-v25-latin-regular.eot');
+    /* IE9 Compat Modes */
+    src: local(''),
+        url('../fonts/montserrat-v25-latin-regular.eot?#iefix') format('embedded-opentype'),
+        /* IE6-IE8 */
+        url('../fonts/montserrat-v25-latin-regular.woff2') format('woff2'),
+        /* Super Modern Browsers */
+        url('../fonts/montserrat-v25-latin-regular.woff') format('woff'),
+        /* Modern Browsers */
+        url('../fonts/montserrat-v25-latin-regular.ttf') format('truetype'),
+        /* Safari, Android, iOS */
+        url('../fonts/montserrat-v25-latin-regular.svg#Montserrat') format('svg');
+    /* Legacy iOS */
+}
+
+/* montserrat-900 - latin */
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 900;
+    src: url('../fonts/montserrat-v25-latin-900.eot');
+    /* IE9 Compat Modes */
+    src: local(''),
+        url('../fonts/montserrat-v25-latin-900.eot?#iefix') format('embedded-opentype'),
+        /* IE6-IE8 */
+        url('../fonts/montserrat-v25-latin-900.woff2') format('woff2'),
+        /* Super Modern Browsers */
+        url('../fonts/montserrat-v25-latin-900.woff') format('woff'),
+        /* Modern Browsers */
+        url('../fonts/montserrat-v25-latin-900.ttf') format('truetype'),
+        /* Safari, Android, iOS */
+        url('../fonts/montserrat-v25-latin-900.svg#Montserrat') format('svg');
+    /* Legacy iOS */
+}
+
+/* montserrat-italic - latin */
+@font-face {
+    font-family: 'Montserrat';
+    font-style: italic;
+    font-weight: 400;
+    src: url('../fonts/montserrat-v25-latin-italic.eot');
+    /* IE9 Compat Modes */
+    src: local(''),
+        url('../fonts/montserrat-v25-latin-italic.eot?#iefix') format('embedded-opentype'),
+        /* IE6-IE8 */
+        url('../fonts/montserrat-v25-latin-italic.woff2') format('woff2'),
+        /* Super Modern Browsers */
+        url('../fonts/montserrat-v25-latin-italic.woff') format('woff'),
+        /* Modern Browsers */
+        url('../fonts/montserrat-v25-latin-italic.ttf') format('truetype'),
+        /* Safari, Android, iOS */
+        url('../fonts/montserrat-v25-latin-italic.svg#Montserrat') format('svg');
+    /* Legacy iOS */
+}
+
+/* montserrat-900italic - latin */
+@font-face {
+    font-family: 'Montserrat';
+    font-style: italic;
+    font-weight: 900;
+    src: url('../fonts/montserrat-v25-latin-900italic.eot');
+    /* IE9 Compat Modes */
+    src: local(''),
+        url('../fonts/montserrat-v25-latin-900italic.eot?#iefix') format('embedded-opentype'),
+        /* IE6-IE8 */
+        url('../fonts/montserrat-v25-latin-900italic.woff2') format('woff2'),
+        /* Super Modern Browsers */
+        url('../fonts/montserrat-v25-latin-900italic.woff') format('woff'),
+        /* Modern Browsers */
+        url('../fonts/montserrat-v25-latin-900italic.ttf') format('truetype'),
+        /* Safari, Android, iOS */
+        url('../fonts/montserrat-v25-latin-900italic.svg#Montserrat') format('svg');
+    /* Legacy iOS */
+}
+
+/* Remove Arrows/Spinners of inputs with type number */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: 'Montserrat', 'sans-serif';
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--primaryColor);
+    color: var(--fontColor);
+}
+
+.header-one {
+    font-size: 3.0rem;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.formatting-font-18 {
+    font-size: 1.8rem;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#password-generated {
+    padding: 1.0rem;
+    background-color: var(--secondaryColor);
+    border-radius: 1.0rem;
+    display: none;
+}
+
+.style-checkbox:checked {
+    background-color: var(--secondaryColor);
+    border-color: var(--secondaryColor);
+}
+
+
+/* Custom button from: https://codepen.io/happyshergill/pen/jOzaxJr */
+.button-generate {
+    display: inline-block;
+    background: var(--secondaryColor);
+    text-align: center;
+    padding: 1.2rem 3.2rem;            
+    font-weight: 400;
+    font-style: normal;
+    font-family: 'Montserrat';
+    font-size: 1.8rem;            
+    color: var(--fontColor);
+    cursor: pointer;
+    border: none;
+    text-transform: uppercase;            
+    border-radius: 0.5rem;
+    transition: 500ms;
+}
+
+.button-generate:before, .button-generate:after{
+    background: var(--fontColor);
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 0;
+    height: 100%;
+    z-index: -1;
+    transition: 500ms;
+}
+
+.button-generate:before{
+    left: 0;
+    border-radius: 0.5rem 0 0 0.5rem;
+}
+
+.button-generate:after{
+    right: 0;
+    border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.button-generate:hover {
+    color: var(--primaryColor);           
+    transform: translateY(-0.5rem);
+}
+
+.button-generate:hover:before, .button-generate:hover:after {
+    width: 50.5%; 
+    background: var(--tertiaryColor);   
+}
+
+
