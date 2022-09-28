@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
     
     let buttonGenerate = $('#button-generate-password');
     let lengthPassword = $('#length-password');
+    let textCopy = '';
     let valueLengthPassword = 0;
     let charactersToUse = '';
     let passwordGenerated = '';
@@ -53,6 +54,16 @@ document.addEventListener("DOMContentLoaded", function() {
 
     $('#img-copy').click(function() {
         console.log('copiar')
+        if(navigator.clipboard) {
+            navigator.clipboard.writeText($('#password-generated')[0].textContent)
+            $(this)[0].src = './assets/img/copy_check.svg';
+            setTimeout(() => {
+                $(this)[0].src = './assets/img/content_copy.svg';
+            }, 1000 * 3);
+        } else {
+            alert('Browser not compatible');
+        }
+
     });
 
 });
